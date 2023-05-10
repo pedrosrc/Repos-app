@@ -1,34 +1,58 @@
 'use client'
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import styles from './profile.module.css'
 
-export async function Profile(){
+export async function Profile() {
 
     const [user, setUser] = useState<string>('pedrosrc')
-    const [infoUser, setInfoUser] = useState<any[]>([])
+    const [infoUser, setInfoUser] = useState<UserProps | any>({})
+
+
+    interface UserProps{
+        name: string,        
+        location: string, 
+        followers: number, 
+        following: number, 
+        avatar_url: string,
+    }
 
     async function handleSubmit(e: any) {
         e.preventDefault();
-        console.log(user)
+        if (user === '') {
+            alert('Digite um user valido')
+        } else {
+            console.log(user)
+            const response = await fetch(`https://api.github.com/users/${user}`, {
+                next: {
+                    revalidate: 60
+                }
+            })
+            const repos = await response.json();
+            const {name, location, followers, following, avatar_url} = repos;
+            const userData : UserProps = {
+                name,
+                location, 
+                followers, 
+                following, 
+                avatar_url
+            }
+            setInfoUser(userData);
+            console.log(userData)
+            
+        }     
     }
 
-    return(
+    return (
         <div>
-            <div>
-                <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.formUser}>
                 <h3>Digite um perfil existente do GiHub:</h3>
-                <input type="text" placeholder="@usuario" value={user} onChange={(e)=> setUser(e.target.value)}/>
+                <input type="text" placeholder="@usuario" value={user} onChange={(e) => setUser(e.target.value)} />
                 <button type="submit">Buscar</button>
-                </form>
-            </div>
-            <div>
-                {infoUser.map((item)=>{
-                    return(
-                        <div>
-                            <h2>{item.name}</h2>
-                        </div>
-                    )
-                })}
+            </form>
+            <div className={styles.info}>
+                <h1>Name {infoUser.name}</h1>
+                
             </div>
         </div>
     )

@@ -1,9 +1,19 @@
-.user {
-    margin-top: 20px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Wix+Madefor+Display&family=Zen+Dots&display=swap');
+
 .user img{
+    margin-top: 30px;
     border-radius: 50%;
     width: 250px;
+}
+.user h2{
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+.user span{
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
 }
 .user ul{
     display: flex;
@@ -15,4 +25,7 @@
     background-color: purple;
     padding: 5px;
     margin: 0 5px;
+    border-radius: 5px;
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
+    
 }

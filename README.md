@@ -5,3 +5,9 @@
 <h2>2 - Tela De Repósitorios:</h2>
 <img src="./assets/dashboard-2.PNG" width="1000" align="center">
 <p>Nessa tela, você pode ver a listagem de todos os repósitorios do user que foi inserido. Nele contém o nome, descrição e a linguaguem de programação de maior porcentagem existente no projeto.</p>
+
+<h3>Tecnologias usadas:</h3>
+<ul>
+    <li>React.Js + TypeScript</li>
+    <li>Next.Js 13</li>
+</ul>

@@ -4,3 +4,6 @@ h1, p{
     text-align: center;
 
 }
+body{
+    overflow-x: hidden;
+}

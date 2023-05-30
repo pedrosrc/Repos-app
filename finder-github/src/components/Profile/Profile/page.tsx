@@ -2,15 +2,16 @@
 
 import { useState } from "react"
 import { UserName } from "../UserName/page"
-import { UserProps } from "@/components/Types/types"
+import { UserProps, ReposProps } from "@/components/Types/types"
 import { Users } from "./users"
 import { Error } from "@/components/Error/page"
-import styles from './profile.module.css'
+
 
 
 export const Profile = () => {
 
     const [user, setUser] = useState< UserProps | null >(null)
+    const [dataRepos, setDataRepos] = useState<ReposProps | null>(null)
     const [error, SetError] = useState<boolean>(false)
 
     
@@ -24,12 +25,12 @@ export const Profile = () => {
                     revalidate: 60
                 }
             })
-        const repos = await response.json();
+        const userProfile = await response.json();
         if (response.status === 404){
             SetError(true)
             return;
         };
-        const {name, location, followers, following, avatar_url, login} = repos;
+        const {name, location, followers, following, avatar_url, login} = userProfile;
         const userData: UserProps = {
             name,
             followers, 
@@ -39,11 +40,10 @@ export const Profile = () => {
             login,
         }; 
         setUser(userData);
-        
     }
 
     return (
-        <div className={styles.info}>
+        <div>
             <UserName loadUser={handleSubmit}/>  
             {user && <Users {...user}/>}
             {error && <Error/>}

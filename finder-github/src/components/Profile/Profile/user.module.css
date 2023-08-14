@@ -92,6 +92,14 @@
     background-color: purple;
     
 }
+.section_loading{
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+    background-color: transparent;
+    margin: auto;
+
+}
 @media screen and (max-width:720px) {
     .user{
         width: 300px;

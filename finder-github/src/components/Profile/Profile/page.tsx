@@ -7,11 +7,10 @@ import { Users } from "./users"
 import { Error } from "@/components/Error/page"
 
 
-
 export const Profile = () => {
 
     const [user, setUser] = useState< UserProps | null >(null)
-    const [dataRepos, setDataRepos] = useState<ReposProps | null>(null)
+    // const [dataRepos, setDataRepos] = useState<ReposProps | null>(null)
     const [error, SetError] = useState<boolean>(false)
 
     

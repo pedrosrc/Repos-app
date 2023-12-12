@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Wix+Madefor+Display&family=Zen+Dots&display=swap');
+
+.error{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+}

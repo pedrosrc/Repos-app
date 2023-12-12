@@ -1,9 +1,0 @@
-h1, p{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-
-}
-body{
-    overflow-x: hidden;
-}

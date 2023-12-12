@@ -1,69 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Dots&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Wix+Madefor+Display&family=Zen+Dots&display=swap');
-
-.info {
+.user{
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    margin: auto;
-    padding: 20px;
-    margin-top: 5%;
+    align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 20px;
+}
+.informationProfile{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
     background-color: #010409;
     border-radius: 10px;
     color: #fff;
-    width: 600px;
-    overflow-x: hidden;
+    width: 450px;
+    height: 470px;
 }
-.info div{
+.informationProfile img{
+    margin: auto;
+    border-radius: 50%;
+    width: 250px;
+}
+.informationProfile h2{
     margin: 0 auto;
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
+    font-weight: normal;
 }
-.info input{
-    font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid #fff;
-    color: #000;    
-    padding: 5px;
-    margin-top: 10px;
-    margin-left: 30px;
-    border-radius: 10px 0 0 10px;
-    outline: none;
-    
-}
-.info h1{
-    font-family: 'Audiowide', Arial, Helvetica, sans-serif;
+.informationProfile span{
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
     font-weight: normal;
     display: flex;
+    margin: 0 auto;
     align-items: center;
 }
-.info p{
+.informationProfile p{
     font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-}
-.info h3{
-    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
-    font-weight: normal;
+    margin: 5px;
     text-align: center;
 }
-.info button{
-    border: 1px solid purple;
-    background-color:purple;
-    padding: 5px;
-    border-radius: 0 10px 10px 0;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-    transition: .3s;
+.informationProfile ul{
+    display: flex;
+    justify-content: center;
+  
 }
-.info button:hover{
+.informationProfile li{
+    list-style: none;
+    background-color: purple;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
+    
+}
+.user button{
+    padding: 5px;
+    width: 200px;
+    border-radius: 10px;
+    margin: auto;
     background-color: transparent;
     border: 1px solid purple;
-    
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
+    transition: .4s;
+}
+.user button:hover{
+    background-color: purple;
+}
+.section_repos{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 470px;
+    margin-left: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: scroll;
+    background-color: #010409;
+}
+.section_repos::-webkit-scrollbar{
+    width: 10px;
+}
+.section_repos::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+.section_repos::-webkit-scrollbar-thumb{
+   background-color: purple;
+   border-radius: 20px;
+    width: 5px;
+    margin: 3px;
+}
+.repository{
+    display: flex;
+    justify-content: space-between;
+    background-color: #0D1117;
+    height: 350px;
+    width: 660px;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    font-family: 'Wix Madefor Display', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    border: 2px solid #010409;
+}
+.repositoryInformation {
+    display: flex;
+    flex-direction: column;
+}
+.repositoryInformation h2{
+    margin-left: 10px;
+}
+.repositoryInformation p{
+    margin-left: 10px;
+}
+.repositoryAcess{
+    margin: 10px;
+}
+.repositoryAcess a{
+    margin: auto;
+    text-decoration: none;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    transition: .4s;
 }
 @media screen and (max-width:720px) {
-    .info{
-        width: 300px;
-        justify-content: center;
-        margin-top: 40%;
+    .user{
+        flex-direction: column;
     }
-    
+    .informationProfile{
+        width: 300px;
+    }
+    .section_repos{
+        width: 300px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .repository{
+        width: 260px;
+    }
+    .repositoryInformation h2{
+        font-size: 0.8em;
+    }
+    .repositoryInformation p {
+        font-size: 0.5em;
+    }
+    .repositoryAcess{
+        margin: 0;
+    }
+    .repositoryAcess a{
+        padding: 4px;
+        font-size: 0.6em;
+    }
 }

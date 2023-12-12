@@ -1,11 +1,10 @@
-import './page.modules.css'
 import { Profile } from '@/components/Profile/Profile/page'
+import'./page.module.css'
 
 export default function Home() {
   return (
-    <div>  
+    <main>  
       <Profile/>
-      
-    </div>
+    </main>
   )
 }
